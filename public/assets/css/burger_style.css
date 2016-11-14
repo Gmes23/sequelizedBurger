@@ -1,0 +1,69 @@
+body{
+  background-color: #ffe861;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+li {
+  background: #FAEBD7;
+  margin: 5px;
+  padding: 5px;
+  margin-left: auto;
+    margin-right: auto;
+    width: 20em
+}
+
+h1 {
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+h2 {
+  text-align: center;
+  margin-left: 100px;
+  height: 2em;
+}
+
+#main{
+  break-inside: avoid;
+  margin: 1 2 2em 1;
+  padding: 1.3em 1em 0 1em;
+}
+
+#addBurger {
+  height: 2em;
+  display: flex;
+  justify-content: center
+}
+
+.label {
+  color: black;
+  font-size: 14px;
+}
+
+textarea {
+  height: 2em;
+  width: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#inputHelpBlock{
+  width: 20em;
+}
+
+#createText {
+  margin-left: 20px;
+}
+
+#createButton {
+  height: 2em;
+  margin: 2em;
+}
