@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
 var PORT = 3000;
-// var connection = new Sequelize('burgers_db', 'root', 'nothing');
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());

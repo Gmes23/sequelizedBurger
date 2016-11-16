@@ -4,8 +4,7 @@ var burgers = require('../models')["burgers"];
 
 router.delete('/delete/:id', function(req, res){
   burgers.destroy({ where: { id: [req.params.id] }
-});
-
+  });
   res.redirect('/');
 });
 

@@ -19,6 +19,3 @@ module.exports = function(sequelize, DataTypes) {
   });
   return burger;
 };
-
-
-//how to populate you table
