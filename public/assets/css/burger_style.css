@@ -21,13 +21,17 @@ h1 {
   height: 1em;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  font-family:  Impact, Charcoal, sans-serif;
+  font-size: 60px;
 }
 
 h2 {
   text-align: center;
   margin-left: 100px;
   height: 2em;
+  font-weight: bold;
+  font-size: 200%;
 }
 
 #main{

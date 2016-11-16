@@ -1,7 +1,32 @@
-<h1>Burger Store
-</h1>
+<h1>Burger Store</h1>
 
-<img src="../assets/img/burgerGifNoBackground.gif" alt="Car"></img>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$('#devouredButton').click($(function() {
+    var $images = [];
+    $("#d1 > .c1 > a").each(function() {
+        $images.push($("img", this).attr("src"));
+    });
+    var $length = $images.length;
+    var $imgShow = 0;
+    $("#d1 > .c1").html( $("#d1 > .c1 > a:first") );
+    $("#d1 > .c1 > a").click(function(event) {
+        $(this).children().attr("src", $images[++$imgShow % $length]);
+        event.preventDefault();
+    });
+}));
+
+</script>
+
+<div id="d1">
+   <div class="c1">
+            <a href="#"><img src="../assets/img/burgerGifNoBackground.gif"></a>
+            <a href="#"><img src="../assets/img/cryingBurgerGif.gif"></a>
+   </div>
+</div>
+</div>
+<div id="d"></div>
 
 <div class="container" id="main">
 <div class="row">
@@ -14,10 +39,10 @@
         <p><span class="label">name:</span> {{this.burger_name}}</p>
           <form action="/burgers/update/{{this.id}}?_method=PUT" method="POST">
             <input type="hidden" name="eatBurger" value="true">
-            <button type="submit" class="btn btn-default">Eat Me!</button>
-          </form>
-          <form action="delete/{{this.id}}?_method=DELETE" method="POST">
-            <button type="submit" class="btn btn-danger">Delete!</button>
+            <button type="submit" class="btn btn-default" id="devouredButton">Eat Me!</button>
+            <form action="delete/{{this.id}}?_method=DELETE" method="POST">
+              <button type="submit" class="btn btn-danger">Delete!</button>
+            </form>
           </form>
         </p>
       </li>
@@ -25,7 +50,7 @@
     {{/each}}
   </ul>
 </div>
-<div class="col-md-6"><h2>burger has been eaten</h2>
+<div class="col-md-6"><h2>Burgers in stomach</h2>
   <ul>
     {{#each burgers}}
       {{#if this.devoured}}
@@ -48,12 +73,12 @@
 </div>
 
 
-<h2 id="createText">add a new burger</h2>
+<h2 id="createText">Make your own Burger!</h2>
 
 <div class="container" id= "addBurger">
-  <label class="sr-only" for="inputHelpBlock">Add your Own Burger!</label>
+  <label class="sr-only" for="inputHelpBlock"></label>
     <form method="POST" action="/create" class="button-size">
       <input type="text" name="newBurgers" method="POST" action="/create" id="inputHelpBlock" class="form-control" aria-describedby="helpBlock">
-      <button type="submit" class="btn btn-warning" id="createButton">Add Your Own Burger</button>
+      <button type="submit" class="btn btn-warning" id="createButton">Make me this burger!</button>
     </form>
 </div>

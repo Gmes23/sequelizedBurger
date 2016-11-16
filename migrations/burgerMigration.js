@@ -16,5 +16,6 @@ module.exports = {
     });
   },
   down: function(queryInterface, Sequelize) {
+    drop.table('burgers');
   }
 };
