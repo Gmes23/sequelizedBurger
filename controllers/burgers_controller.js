@@ -1,25 +1,26 @@
 var express = require('express');
 var router = express.Router();
-var burger = require('../models');
-var migration = require('../migrations');
+var burgers = require('../models')["burgers"];
 
-router.get('/', function (req, res) {
-  res.redirect('/burgers');
+router.delete('/delete/:id', function(req, res){
+  burgers.destroy({ where: { id: [req.params.id] }
 });
 
-router.get('/burgers', function (req, res) {
-    res.render('index', {burgers: res});
+  res.redirect('/');
 });
 
-router.post('/burgers/create', function (req, res) {
-  models.burger.create({burgers_name: req.body.newBurgers});
-  res.redirect('/burgers');
+router.post('/create', function (req, res) {
+    burgers.create({ burger_name: req.body.newBurgers }).then(res.redirect('/'));
 });
 
 router.put('/burgers/update/:id', function (req, res) {
-   burger({devoured: req.body.eatBurger});
-  res.render('/burger');
-
+   burgers.update({ devoured: req.body.eatBurger }, { where: {id: req.params.id} });
+   res.redirect('/');
+});
+router.get('/', function(req, res) {
+  burgers.findAll().then(function(burgers) {
+    res.render('index', { burgers:burgers})
+  })
 });
 
 module.exports = router;
