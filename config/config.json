@@ -18,6 +18,7 @@
     "password": "c8p78ylbsoswcpzu",
     "database": "i48x5a7veyr6hdii",
     "host": "enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "seederStorage": "sequelize"
   }
 }
